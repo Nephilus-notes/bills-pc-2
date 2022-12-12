@@ -3,7 +3,23 @@
 {% block title %}Home{% endblock title%}
 
 {% block content %}
+{% if user is anonymous %}
+<div class="content-top">
+    <div class="top-flex">
+        <a class="btn yellow-btn" aria-current="refresh pokemon" href="{{ url_for('auth.register') }}">Register</a>
+    </div>
+    <div>
+        <div class=" top-h1">
+            <h1>Login</h1>
+        </div>
+    </div>
+    <div class="top-flex">
+        <a class="btn yellow-btn" aria-current="search pokemon" href="{{ url_for('search.search_pokemon') }}">Search
+            Pokemon</a>
+    </div>
+</div>
 
+ {% else %}
 <div class="content-top">
     <div class="top-flex">
         <a class="btn yellow-btn" aria-current="refresh pokemon" href="{{ url_for('main.home') }}">Refresh Pokemon</a>
@@ -12,7 +28,7 @@
         <div class=" top-h1">
             <h1>Home</h1>
         </div>
-            {% if user.is_authenticated %}
+           
             <div class="top-h1">
                 <p>Welcome {{ user.username }}</p>
             

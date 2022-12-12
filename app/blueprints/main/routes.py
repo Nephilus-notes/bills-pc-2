@@ -80,7 +80,7 @@ def choose_pokemon():
     db.session.add(new_pokemon)
     db.session.commit()
     flash(f'{new_pokemon.name.title()} added to your PC', 'success')
-    return redirect(url_for('main.home'))
+    return redirect(url_for('main.your_pc'))
 
 @app.route('/your_pc')
 @login_required

@@ -90,6 +90,7 @@ a {
     background-color: red;
     border: 2px solid black;
     min-height: 200px;
+    padding: 5px;
 }
 
 
@@ -136,7 +137,7 @@ a {
 }
 
 .pc-card-body {
-    height: 200px;
+    /* height: 200px; */
     display: flex;
     /* flex-direction: column; */
     justify-content: space-around;

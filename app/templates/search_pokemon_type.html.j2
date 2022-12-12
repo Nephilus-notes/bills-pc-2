@@ -6,21 +6,22 @@
 {% block content %}
 <div class="content-top">
     <div class="top-flex">
-    {% if pokemon %}
-       {# Take out this check status button, replace with something that makes more sense
-<a class="btn yellow-btn btn-form" href="{{ url_for('main.pokemon_by_id', id=pokemon.id) }}">
-Check Status</a> #}
-           
-           
-           {% else %}
-           {% endif %}
+        {% if pokemon %}
+        {# Take out this check status button, replace with something that makes more sense
+        <a class="btn yellow-btn btn-form" href="{{ url_for('main.pokemon_by_id', id=pokemon.id) }}">
+            Check Status</a> #}
+
+
+        {% else %}
+        {% endif %}
         </form>
     </div>
     <div class="top-h1 top-flex">
         <h1>Pokemon</h1>
     </div>
     <div class="top-flex">
-        <a class="btn yellow-btn" aria-current="log out" href="{{ url_for('search.search_pokemon') }}">Search Pokemon</a>
+        <a class="btn yellow-btn" aria-current="log out" href="{{ url_for('search.search_pokemon') }}">Search
+            Pokemon</a>
     </div>
 </div>
 
@@ -28,11 +29,11 @@ Check Status</a> #}
     <div class="flex-right">
         <div class="mb-3 search-form">
             <form action="{{ url_for('search.search_pokemon_type') }}" method="POST">
-{% if pokemon %}
-                <label for="type" class="form-label" ><strong>Pokemon Type:</strong></label>
+                {% if pokemon %}
+                <label for="type" class="form-label"><strong>Pokemon Type:</strong></label>
                 <input type="text" class="form-control" id="type" name="type" placeholder="{{ pokemon_type.title() }}">
                 {% else %}
-                 <label for="type" class="form-label" ><strong>Pokemon Type:</strong></label>
+                <label for="type" class="form-label"><strong>Pokemon Type:</strong></label>
                 <input type="text" class="form-control" id="type" name="type" placeholder="Type">
                 {% endif%}
                 <button type="submit" class="btn small-btn search-btn">Submit</button>
@@ -40,28 +41,29 @@ Check Status</a> #}
         </div>
     </div>
 </div>
-    {% if pokemon %}
+{% if pokemon %}
 <div class="card-flex">
 
 
     {% for pokemon in pokemon %}
-    <div class="card pc_card">
+    <div class="card pccard">
         <div class="card-body">
-            <h3 class="card-title">{{ pokemon.name.title() }}</h3>
+              <h5 class="card-title"><a href="{{ url_for('main.pokemon_by_id', id=pokemon.id) }}">{{ pokemon.name.title() }}</h5>
+            </a>
 
-                <img class="pokedex_img" src="{{ pokemon.reg_sprite }}" , height="300">
+            <img class="pc_img" src="{{ pokemon.reg_sprite }}" , height="100">
 
-                  <p><strong>Type</strong>: {{ pokemon.type1 }}</p>
-                {% if pokemon.type2 %}
-                <p><strong>Type 2</strong>: {{ pokemon.type2 }}</p>
-                {% endif %}
-                <p><strong>Ability</strong>: {{ pokemon.ability1 }}</p>
-                {% if pokemon.ability2 %}
-                <p><strong>Ability</strong>: {{ pokemon.ability2 }}</p>
-                {% if pokemon.ability3 %}
-                <p><strong>Ability</strong>: {{ pokemon.ability3 }}</p>
-                {% endif %}
-                {% endif %}
+            <p><strong>Type</strong>: {{ pokemon.type1 }}</p>
+            {% if pokemon.type2 %}
+            <p><strong>Type 2</strong>: {{ pokemon.type2 }}</p>
+            {% endif %}
+            <p><strong>Ability</strong>: {{ pokemon.ability1 }}</p>
+            {% if pokemon.ability2 %}
+            <p><strong>Ability</strong>: {{ pokemon.ability2 }}</p>
+            {% if pokemon.ability3 %}
+            <p><strong>Ability</strong>: {{ pokemon.ability3 }}</p>
+            {% endif %}
+            {% endif %}
 
         </div>
         <div class="card-footer">

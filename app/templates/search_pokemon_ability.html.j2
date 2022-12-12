@@ -8,8 +8,8 @@
     <div class="top-flex">
     {% if pokemon %}
        {# Take out this check status button, replace with something that makes more sense #}
-<a class="btn yellow-btn btn-form" href="{{ url_for('main.pokemon_by_id', id=pokemon.id) }}">
-Check Status</a>
+{# <a class="btn yellow-btn btn-form" href="{{ url_for('main.pokemon_by_id', id=pokemon.id) }}">
+Check Status</a> #}
            
            
            {% else %}
@@ -20,7 +20,7 @@ Check Status</a>
         <h1>Pokemon</h1>
     </div>
     <div class="top-flex">
-        <a class="btn yellow-btn" aria-current="log out" href="#">Search Pokemon</a>
+        <a class="btn yellow-btn" aria-current="log out" href="{{ url_for('search.search_pokemon') }}">Search Pokemon</a>
     </div>
 </div>
 

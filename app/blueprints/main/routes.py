@@ -43,7 +43,7 @@ def choose_pokemon():
     ability_str = 'ability' + str(ability_num)
     ability = getattr(pokemon, ability_str)
     """
-    """
+    
     move_list = [r._asdict() for r in (PokemonMove.query.filter_by(pokemon_id=pokemon_id))]
     move1 = move_list[1]
     if len(move_list) == 2:
@@ -68,7 +68,8 @@ def choose_pokemon():
         while move4 == move1 or move4 == move2 or move4 == move3:
             move4 = move_list[randint(1, len(move_list)-1)]
 
-    """"""
+    """
+    move1=1
     shiny_chance = randint(1,100)
     if shiny_chance == 100:
         sprite = pokemon.shiny_sprite

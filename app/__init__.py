@@ -29,7 +29,7 @@ def create_app():
     # create files for each concern (init, routes, etc)
 
     login_manager.login_view = 'auth.login'
-    login_manager.login_message = 'You cannot see this!'
+    login_manager.login_message = 'Register or Log in to start catching Pokemon!'
     login_manager.login_message_category = 'danger'
 
     return app

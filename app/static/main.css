@@ -39,6 +39,31 @@ a {
     font-weight: 800;
 }
 
+.register-tags {
+    max-width: fit-content;
+    min-width: 200px;
+    /* display: inline-flex; */
+    margin-right: 10px;
+    background-color: yellow;
+    padding:10px 20px;
+    border-radius: 40px;
+    border: 2px solid black;
+    font-weight: 800;
+}
+
+.register-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+.register-form {
+    width: 500px
+} 
+.register-input {
+    max-height: 2.5em;
+}
+
 .user-dropdown {
     background-color: yellow;
     border: 1px solid black;

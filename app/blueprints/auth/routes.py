@@ -21,7 +21,6 @@ def login():
         flash(f'User with email {email} does not exist.', 'danger')
     elif user.check_my_password(password):
         login_user(user)
-        flash(f'Welcome back {user.username}', 'success')
         if next_url != '':
             return redirect(next_url)
         return redirect(url_for('main.home'))

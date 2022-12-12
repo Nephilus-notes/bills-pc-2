@@ -3,14 +3,14 @@
 {% block title %}Home{% endblock title%}
 
 {% block content %}
-{% if user is anonymous %}
+{% if current_user.is_anonymous %}
 <div class="content-top">
     <div class="top-flex">
         <a class="btn yellow-btn" aria-current="refresh pokemon" href="{{ url_for('auth.register') }}">Register</a>
     </div>
     <div>
-        <div class=" top-h1">
-            <h1>Login</h1>
+        <div class="top-h1">
+            <h1>Please Login</h1>
         </div>
     </div>
     <div class="top-flex">
@@ -18,7 +18,11 @@
             Pokemon</a>
     </div>
 </div>
-
+<div class="card-flex">
+<div class="top-flex">
+        <a class="btn yellow-btn login-lonesome" aria-current="" href="{{ url_for('auth.login') }}">Login</a>
+    </div>
+</div>
  {% else %}
 <div class="content-top">
     <div class="top-flex">
@@ -70,9 +74,8 @@
 
     </div>
     {% endfor %}
-    {% else %}
 </div>
 <p>Please <a href="{{ url_for('auth.login') }}">Login</a></p>
-{% endif%}
 
+{% endif %}
 {% endblock content %}

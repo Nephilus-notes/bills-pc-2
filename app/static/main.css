@@ -39,6 +39,11 @@ a {
     font-weight: 800;
 }
 
+.top-flex {
+    align-items: center;
+    display: flex;
+}
+
 .register-tags {
     max-width: fit-content;
     min-width: 200px;

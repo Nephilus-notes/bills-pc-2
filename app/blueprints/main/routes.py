@@ -13,7 +13,7 @@ def home():
     for id in random_ids:
         random_pokemon = AllPokemon.query.filter_by(id=id).first()
         display_pokemon[id] = random_pokemon
-    return render_template('home.html', user=current_user, pokemon=display_pokemon)
+    return render_template('home.html.j2', user=current_user, pokemon=display_pokemon)
 
 
 @app.route('/pokemon/<id>')

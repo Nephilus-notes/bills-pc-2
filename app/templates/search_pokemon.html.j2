@@ -1,0 +1,35 @@
+{% extends './layout.html' %}
+
+{% block title %}Search{% endblock title%}
+
+
+{% block content %}
+<div class="content-top">
+    <div class="top-flex">
+        {# <form action="{{ url_for('main.choose_pokemon') }}" method="POST">
+            <input type="hidden" value="{{ pokemon.id }}" name='pokemon'>
+
+            <button type="submit" class="btn yellow-btn btn-form" aria-current="choose pokemon">I Choose You!</button> #}
+        </form>
+    </div>
+    <div class="top-h1 top-flex">
+        <h1>Pokemon</h1>
+    </div>
+    <div class="top-flex">
+    <a class="btn yellow-btn" aria-current="log out" href="#">Search Pokemon</a>
+    </div>
+</div>
+
+<div class="card-flex search-form">
+    <a class="btn yellow-btn" aria-current="log out" 
+    href="{{ url_for('search.search_pokemon_id') }}">Search by ID</a>
+    <a class="btn yellow-btn" aria-current="log out" 
+    href="{{ url_for('search.search_pokemon_type') }}">Search by Type</a>
+    <a class="btn yellow-btn" aria-current="log out" 
+    href="{{ url_for('search.search_pokemon_name') }}">Search by Name</a>
+    <a class="btn yellow-btn" aria-current="log out" 
+    href="{{ url_for('search.search_pokemon_ability') }}">Search by Ability</a>
+
+</div>
+
+{% endblock content%}

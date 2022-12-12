@@ -156,6 +156,7 @@ def create_move():
                 db.session.add(new_move)
         else:
             db.session.commit()
+        db.session.commit()
 
             # from app.blueprints.main.models import create_move
 
